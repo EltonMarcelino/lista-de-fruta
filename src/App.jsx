@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 function App() {
-  const [fruitList, setFruit] = useState[
+  const [fruitList, setFruit] = useState([
     
       {
         name: "Morango",
@@ -24,11 +24,19 @@ function App() {
         category: "Legumes",
      }, 
     
-  ]
+  ]) 
 
-  
+  const total = fruitList.reduce((valorAtual, proximoValor) =>  valorAtual + proximoValor.price,0)
+console.log(total)
+
   return (
-  
+    <div>
+      <h1></h1>
+      <span>${`total:(${total})`}</span>
+    </div>
+      
+
+    
   )
 }
 
