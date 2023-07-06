@@ -26,13 +26,41 @@ function App() {
     
   ]) 
 
-  const total = fruitList.reduce((valorAtual, proximoValor) =>  valorAtual + proximoValor.price,0)
+  const total = fruitList.reduce((currentValue, nextValue) =>  currentValue + nextValue.price,0)
 console.log(total)
+
+const fruits = fruitList.filter(fruitValue=>(fruitValue.category ==="Frutas"))
+console.log(fruits)
+
+
+
+
+
 
   return (
     <div>
-      <h1></h1>
-      <span>${`total:(${total})`}</span>
+      <>
+       
+        {fruitList.map((fruit, index)=>(
+          <ul key={index}>
+        <li>{fruit.name}</li>
+        </ul>
+      ))}
+
+
+      <span>{`total:(${total})`}</span>
+
+          {fruits.map((fruit, index) =>(
+             <ul key={index}>
+              <span>{fruit.name}</span>
+             </ul>
+             
+          ))}
+     
+      </>
+     
+        
+      
     </div>
       
 
